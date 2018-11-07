@@ -1,0 +1,18 @@
+  {dashboardRoutes.map((prop, key) => {
+              if (prop.collapse) {
+                return prop.views.map((prop2, key2) => {
+                  return (
+                    <Route
+                      path={prop2.path}
+                      component={prop2.component}
+                      key={key2}
+                    />
+                  );
+                });
+              }
+              if (prop.redirect)
+                return <Redirect from={prop.path} to={prop.pathTo} key={key} />;
+              return (
+                <Route path={prop.path} component={prop.component} key={key} />
+              );
+            })}

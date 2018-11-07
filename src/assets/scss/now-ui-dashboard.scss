@@ -1,0 +1,101 @@
+/*!
+
+ =========================================================
+ * Now UI Dashboard React - v1.1.0 based on Now UI Dashboard - v1.1.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+ * Copyright 2018 Creative Tim (http://www.creative-tim.com)
+
+ * Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+@import "now-ui-dashboard/variables";
+@import "now-ui-dashboard/mixins";
+
+// Plugins CSS
+@import "now-ui-dashboard/plugins/plugin-animate-bootstrap-notify";
+@import "now-ui-dashboard/plugins/plugin-perfect-scrollbar";
+
+// Core CSS
+@import "now-ui-dashboard/buttons";
+@import "now-ui-dashboard/inputs";
+@import "now-ui-dashboard/typography";
+@import "now-ui-dashboard/misc";
+@import "now-ui-dashboard/checkboxes-radio";
+
+// components
+@import "now-ui-dashboard/navbar";
+@import "now-ui-dashboard/page-header";
+@import "now-ui-dashboard/dropdown";
+@import "now-ui-dashboard/alerts";
+@import "now-ui-dashboard/images";
+@import "now-ui-dashboard/nucleo-outline";
+@import "now-ui-dashboard/tables";
+@import "now-ui-dashboard/sidebar-and-main-panel";
+@import "now-ui-dashboard/footers";
+@import "now-ui-dashboard/fixed-plugin";
+
+// cards
+@import "now-ui-dashboard/cards";
+@import "now-ui-dashboard/cards/card-plain";
+@import "now-ui-dashboard/cards/card-chart";
+@import "now-ui-dashboard/cards/card-user";
+@import "now-ui-dashboard/cards/card-map";
+
+@import "now-ui-dashboard/responsive";
+
+/*Typography*/
+.title {
+  font-weight: 500;
+}
+/*Sidebar*/
+.sidebar .nav li.active > a:not([data-toggle="collapse"]),
+.off-canvas-sidebar .nav li.active > a:not([data-toggle="collapse"]) {
+  background-color: $opacity-3;
+  border-radius: 0px;
+}
+.sidebar .nav li > a,
+.sidebar .nav li > a:not([href]):not([tabindex]):focus,
+.sidebar .nav li > a:not([href]):not([tabindex]):hover,
+.off-canvas-sidebar .nav li > a,
+.off-canvas-sidebar .nav li > a:not([href]):not([tabindex]):focus,
+.off-canvas-sidebar .nav li > a:not([href]):not([tabindex]):hover {
+  color: $white-color;
+  border-radius: 0px;
+}
+.sidebar .nav i,
+.off-canvas-sidebar .nav i {
+  color: $white-color;
+}
+.sidebar[data-color="primary"] .nav li.active > a,
+.off-canvas-sidebar[data-color="primary"] .nav li.active > a {
+  color: $white-color;
+}
+.sidebar[data-color="primary"] .nav li.active > a i,
+.off-canvas-sidebar[data-color="primary"] .nav li.active > a i {
+  color: $primary-color;
+}
+
+.sidebar[data-color="primary"]:after,
+.off-canvas-sidebar[data-color="primary"]:after {
+  @include two-colors-gradient();
+}
+
+.sidebar:after,
+.off-canvas-sidebar:after {
+  @include two-colors-gradient();
+}
+
+/*       Page Content        */
+/*         Header           */
+.panel-header {
+}
+.navbar .navbar-brand {
+  text-transform: capitalize;
+}
