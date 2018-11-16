@@ -101,6 +101,7 @@
 
       &:hover {
         & .navbar-toggler-bar.bar2 {
+          text-align: right;
           width: 22px;
         }
       }
@@ -170,9 +171,9 @@
     .nav-item .nav-link:not(.btn):focus,
     .nav-item .nav-link:not(.btn):hover,
     .nav-item .nav-link:not(.btn):active {
-      background-color: $opacity-2;
+      background-color: $white-color-opacity-2;
       border-radius: $border-radius-small;
-      color: $black-color;
+      color: $gray;
     }
   }
 
@@ -252,8 +253,8 @@
   background-color: $default-color !important;
 }
 
-.bg-primary {
-  background-color: $primary-color !important;
+.bg-aqua {
+  background-color: $aqua !important;
 }
 
 .bg-info {

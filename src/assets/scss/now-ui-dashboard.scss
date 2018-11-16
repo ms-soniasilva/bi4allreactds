@@ -54,45 +54,6 @@
 .title {
   font-weight: 500;
 }
-/*Sidebar*/
-.sidebar .nav li.active > a:not([data-toggle="collapse"]),
-.off-canvas-sidebar .nav li.active > a:not([data-toggle="collapse"]) {
-  background-color: $opacity-3;
-  border-radius: 0px;
-}
-.sidebar .nav li > a,
-.sidebar .nav li > a:not([href]):not([tabindex]):focus,
-.sidebar .nav li > a:not([href]):not([tabindex]):hover,
-.off-canvas-sidebar .nav li > a,
-.off-canvas-sidebar .nav li > a:not([href]):not([tabindex]):focus,
-.off-canvas-sidebar .nav li > a:not([href]):not([tabindex]):hover {
-  color: $white-color;
-  border-radius: 0px;
-}
-.sidebar .nav i,
-.off-canvas-sidebar .nav i {
-  color: $white-color;
-}
-.sidebar[data-color="primary"] .nav li.active > a,
-.off-canvas-sidebar[data-color="primary"] .nav li.active > a {
-  color: $white-color;
-}
-.sidebar[data-color="primary"] .nav li.active > a i,
-.off-canvas-sidebar[data-color="primary"] .nav li.active > a i {
-  color: $primary-color;
-}
-
-.sidebar[data-color="primary"]:after,
-.off-canvas-sidebar[data-color="primary"]:after {
-  @include two-colors-gradient();
-}
-
-.sidebar:after,
-.off-canvas-sidebar:after {
-  @include two-colors-gradient();
-}
-
-/*       Page Content        */
 /*         Header           */
 .panel-header {
 }

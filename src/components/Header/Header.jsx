@@ -18,8 +18,7 @@ import {
   Input
 } from "reactstrap";
 
-import dashboardRoutes from "routes/newDashboard.jsx";
-import newRoutes from "routes/newDashboard.jsx";
+import sidebarRoute from "routes/sidebar.jsx";
 
 class Header extends React.Component {
   constructor(props) {
@@ -53,7 +52,7 @@ class Header extends React.Component {
   }
   getBrand() {
     var name;
-    newRoutes[0].items.map((prop, key) => {
+    sidebarRoute[0].items.map((prop, key) => {
       if (prop.collapse) {
         prop.views.map((prop, key) => {
           if (prop.path === this.props.location.pathname) {
@@ -124,18 +123,6 @@ class Header extends React.Component {
       >
         <Container fluid>
           <div className="navbar-wrapper">
-            <div className="navbar-toggle">
-              <button
-                type="button"
-                ref="sidebarToggle"
-                className="navbar-toggler"
-                onClick={() => this.openSidebar()}
-              >
-                <span className="navbar-toggler-bar bar1" />
-                <span className="navbar-toggler-bar bar2" />
-                <span className="navbar-toggler-bar bar3" />
-              </button>
-            </div>
             <NavbarBrand href="/">{this.getBrand()}</NavbarBrand>
           </div>
           <NavbarToggler onClick={this.toggle}>
@@ -194,6 +181,18 @@ class Header extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
+          <div className="navbar-toggle">
+            <button
+              type="button"
+              ref="sidebarToggle"
+              className="navbar-toggler"
+              onClick={() => this.openSidebar()}
+            >
+              <span className="navbar-toggler-bar bar1" />
+              <span className="navbar-toggler-bar bar2" />
+              <span className="navbar-toggler-bar bar3" />
+            </button>
+          </div>
         </Container>
       </Navbar>
     );

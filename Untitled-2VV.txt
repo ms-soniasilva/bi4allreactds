@@ -1,18 +1,159 @@
-  {dashboardRoutes.map((prop, key) => {
-              if (prop.collapse) {
-                return prop.views.map((prop2, key2) => {
-                  return (
-                    <Route
-                      path={prop2.path}
-                      component={prop2.component}
-                      key={key2}
-                    />
-                  );
-                });
-              }
-              if (prop.redirect)
-                return <Redirect from={prop.path} to={prop.pathTo} key={key} />;
-              return (
-                <Route path={prop.path} component={prop.component} key={key} />
-              );
-            })}
+import React from "react";
+import {
+  Alert,
+  Card,
+  CardTitle,
+  CardBody,
+  CardColumns,
+  CardHeader,
+  CardLink,
+  CardSubtitle,
+  CardText,
+  Row,
+  Col
+} from "reactstrap";
+// react plugin for creating notifications over the dashboard
+import NotificationAlert from "react-notification-alert";
+
+import { PanelHeader, Button } from "components";
+
+import colorsRoute from "routes/colors.jsx";
+
+class Notifications extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visible: true,
+      body: colorsRoute
+    };
+    this.onDismiss = this.onDismiss.bind(this);
+    this.notify = this.notify.bind(this);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.state = {
+      isHovering: false
+    };
+  }
+  handleMouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering
+    };
+  }
+  onDismiss() {}
+  notify(place) {
+    var color = Math.floor(Math.random() * 5 + 1);
+    var type;
+    switch (color) {
+      case 1:
+        type = "aqua";
+        break;
+      case 2:
+        type = "success";
+        break;
+      case 3:
+        type = "danger";
+        break;
+      case 4:
+        type = "warning";
+        break;
+      case 5:
+        type = "info";
+        break;
+      default:
+        break;
+    }
+    var options = {};
+    options = {
+      place: place,
+      message: (
+        <div>
+          <div>
+            Welcome to <b>Now UI Dashboard React</b> - a beautiful freebie for
+            every web developer.
+          </div>
+        </div>
+      ),
+      type: type,
+      icon: "now-ui-icons ui-1_bell-53",
+      autoDismiss: 7
+    };
+    this.refs.notificationAlert.notificationAlert(options);
+  }
+
+  render() {
+    return (
+      <div>
+        <PanelHeader
+          content={
+            <div className="header text-center">
+              <h2 className="title">The Color Library</h2>
+              <p className="category">
+                Pick the perfect color combinations for your design. HEX and RGB
+                values can be easily copied by hovering over a swatch and
+                clicking on the value you want.
+              </p>
+            </div>
+          }
+        />
+        <div className="content">
+          <NotificationAlert ref="notificationAlert" />
+          <Row>
+            <Col md={12} xs={12}>
+              {colorsRoute.map((prop, key) => {
+                return (
+                  <Card key={key}>
+                    <CardHeader>
+                      <CardTitle tag="h4">{prop.title}</CardTitle>
+                      <p>{prop.description}</p>
+                    </CardHeader>
+                    <CardBody>
+                      <Col class="color-card" md={3} sm={4} xs={6}>
+                        <Card>
+                          <CardBody>
+                            <div
+                              color="aqua"
+                              class="color-header color-header-aqua"
+                              onMouseEnter={this.handleMouseHover}
+                              onMouseLeave={this.handleMouseHover}
+                              key={key}
+                            >
+                              {this.state.isHovering && (
+                                <div class="color-header-hovered">
+                                  <div class="color-link">
+                                    {" "}
+                                    <a onClick={() => this.notify("br")}>
+                                      <span>Copy RGB</span>
+                                    </a>
+                                  </div>
+                                  <div class="color-link">
+                                    <a onClick={() => this.notify("br")}>
+                                      <span>Copy Hex</span>
+                                    </a>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                            <CardText>{prop.name}</CardText>
+                            <CardText>${prop.variable}</CardText>
+                            <CardText>RGB &nbsp;{prop.rgb}</CardText>
+                            <CardText>HEX &nbsp;{prop.hex}</CardText>
+                          </CardBody>
+                        </Card>
+                      </Col>
+                    </CardBody>
+                  </Card>
+                );
+              })}
+            </Col>
+          </Row>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Notifications;

@@ -180,7 +180,7 @@ class Dashboard extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
-                    <thead className=" text-primary">
+                    <thead className=" text-aqua">
                       <tr>
                         <th>Name</th>
                         <th>Country</th>

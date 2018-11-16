@@ -9,7 +9,9 @@
     height: auto;
   }
 }
-
+.input-group {
+  padding: 0 10px;
+}
 .sidebar .sidebar-wrapper,
 .main-panel {
   overflow: auto;
@@ -28,7 +30,7 @@
   height: 100%;
   bottom: 0;
   width: 260px;
-  left: 0;
+  right: 0;
   z-index: 1031;
 
   .sidebar-wrapper {
@@ -106,8 +108,6 @@
       > a:not([href]):not([tabindex]):focus,
       > a:not([href]):not([tabindex]):hover {
         margin: 0;
-        border-radius: $btn-round-radius;
-
         color: $white-color;
         display: block;
         text-decoration: none;
@@ -125,7 +125,7 @@
 
       &:hover:not(.active) > a,
       &:focus:not(.active) > a {
-        background-color: $opacity-1;
+        background-color: $opacity-gray-1;
       }
 
       &:hover:not(.active) > a i,
@@ -134,12 +134,12 @@
       }
 
       &.active > a:not([data-toggle="collapse"]) {
-        background-color: $white-color;
+        background: $opacity-gray-2;
         box-shadow: $box-shadow;
       }
 
       &.active > a[data-toggle="collapse"] {
-        background-color: $opacity-1;
+        background-color: $white-color-opacity-5;
         box-shadow: none;
         color: $white-color;
 
@@ -154,7 +154,7 @@
             background-color: $white-color;
             border-radius: 30px;
             box-shadow: $box-shadow;
-            color: $primary-color;
+            color: $aqua;
             height: 44px;
             width: calc(100% - 5px);
             top: 0;
@@ -168,6 +168,9 @@
     p {
       margin: 0 0 0 20px;
       line-height: 30px;
+      font-size: $font-size-small-navbar !important;
+      color: $gray-lighten-20;
+
       position: relative;
       display: block;
       height: auto;
@@ -175,7 +178,7 @@
       transition: transform 300ms ease 0s, opacity 300ms ease 0s;
     }
 
-    i {
+    /* i {
       font-size: 20px;
       float: left;
       margin-right: 12px;
@@ -184,13 +187,12 @@
       text-align: center;
       color: $opacity-5;
       position: relative;
-    }
+    }*/
   }
   .sidebar-parent {
     > a + div .nav li > a {
       margin-top: 7px;
     }
-
     > a,
     > a:not([href]):not([tabindex]):focus,
     > a:not([href]):not([tabindex]):hover {
@@ -211,7 +213,7 @@
 
     &:hover:not(.active) > a,
     &:focus:not(.active) > a {
-      background-color: $opacity-1;
+      background-color: $white-color-opacity-1;
     }
 
     &:hover:not(.active) > a i,
@@ -225,7 +227,7 @@
     }
 
     &.active > a[data-toggle="collapse"] {
-      background-color: $opacity-1;
+      background-color: $white-color-opacity-1;
       box-shadow: none;
       color: $white-color;
 
@@ -240,7 +242,7 @@
           background-color: $white-color;
           border-radius: $btn-round-radius;
           box-shadow: $box-shadow;
-          color: $primary-color;
+          color: $aqua;
           height: 44px;
           width: calc(100% - 5px);
           top: 0;
@@ -250,8 +252,9 @@
       }
     }
     p {
-      font-weight: bold;
-      font-size: $font-size-base;
+      font-weight: 400;
+      font-size: $font-size-large-navbar !important;
+      color: $gray;
     }
   }
 
@@ -310,14 +313,14 @@
       right: 15px;
       height: 1px;
       width: calc(100% - 30px);
-      background-color: $opacity-5;
+      background-color: $white-color-opacity-5;
     }
 
     p {
       float: left;
       font-size: 20px;
       margin: 10px 10px;
-      color: $white-color;
+      color: $gray;
       line-height: 20px;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
@@ -327,7 +330,7 @@
       display: block;
       white-space: nowrap;
       font-size: $font-size-large;
-      color: $white-color;
+      color: $opacity-gray-6;
       text-decoration: none;
       font-weight: $font-weight-normal;
       line-height: 30px;
@@ -367,8 +370,8 @@
     z-index: 3;
   }
 
-  &[data-color="primary"] {
-    @include sidebar-color($primary-color);
+  &[data-color="white"] {
+    @include sidebar-color($white-color);
   }
   &[data-color="green"] {
     @include sidebar-color($success-color);
@@ -391,6 +394,17 @@
   display: none !important;
 }
 
+.menu-search {
+  margin-top: 20px;
+  text-transform: uppercase;
+  p {
+    padding-bottom: 10px;
+    font-weight: 500 !important;
+    font-size: $font-size-large-navbar !important;
+    color: $gray !important;
+  }
+}
+
 .off-canvas-sidebar {
   .nav {
     > li > a,
@@ -406,10 +420,10 @@
 
 .main-panel {
   position: relative;
-  float: right;
+  float: left;
   width: $sidebar-width;
   // width: 100%;
-  background-color: $light-gray;
+  background-color: $gray-lighten-40;
   background-color: #ebecf1;
 
   @include transition(0.5s, cubic-bezier(0.685, 0.0473, 0.346, 1));
@@ -456,7 +470,7 @@
   padding-top: 80px;
   padding-bottom: 45px;
   position: relative;
-  @include panel-gradient($black-color);
+  @include two-colors-gradient;
 
   .header {
     .title {
@@ -464,7 +478,7 @@
     }
     .category {
       max-width: 600px;
-      color: $opacity-5;
+      color: $white-color-opacity-5;
       margin: 0 auto;
       font-size: 13px;
 

@@ -90,8 +90,8 @@
 
 // Apply the mixin to the buttons
 // .btn-default { @include btn-styles($default-color, $default-states-color); }
-.btn-primary {
-  @include btn-styles($primary-color, $primary-states-color);
+.btn-aqua {
+  @include btn-styles($aqua, $aqua-lighten-10);
 }
 .btn-success {
   @include btn-styles($success-color, $success-states-color);

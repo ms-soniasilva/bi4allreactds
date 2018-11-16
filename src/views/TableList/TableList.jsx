@@ -27,7 +27,7 @@ class RegularTables extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
-                    <thead className="text-primary">
+                    <thead className="text-aqua">
                       <tr>
                         {thead.map((prop, key) => {
                           if (key === thead.length - 1)
@@ -69,7 +69,7 @@ class RegularTables extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
-                    <thead className="text-primary">
+                    <thead className="text-aqua">
                       <tr>
                         {thead.map((prop, key) => {
                           if (key === thead.length - 1)

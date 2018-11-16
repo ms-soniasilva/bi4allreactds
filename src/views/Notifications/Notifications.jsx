@@ -28,7 +28,7 @@ class Notifications extends React.Component {
     var type;
     switch (color) {
       case 1:
-        type = "primary";
+        type = "aqua";
         break;
       case 2:
         type = "success";
@@ -142,13 +142,13 @@ class Notifications extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <Alert
-                    color="primary"
+                    color="aqua"
                     isOpen={this.state.visible}
                     toggle={this.onDismiss}
                   >
                     <span>
-                      <b> Primary - </b> This is a regular notification made
-                      with color="primary"
+                      <b> aqua - </b> This is a regular notification made
+                      with color="aqua"
                     </span>
                   </Alert>
                   <Alert
@@ -213,7 +213,7 @@ class Notifications extends React.Component {
                         <Row>
                           <Col md={4} xs={12}>
                             <Button
-                              color="primary"
+                              color="aqua"
                               block
                               onClick={() => this.notify("tl")}
                             >
@@ -222,7 +222,7 @@ class Notifications extends React.Component {
                           </Col>
                           <Col md={4} xs={12}>
                             <Button
-                              color="primary"
+                              color="aqua"
                               block
                               onClick={() => this.notify("tc")}
                             >
@@ -231,7 +231,7 @@ class Notifications extends React.Component {
                           </Col>
                           <Col md={4} xs={12}>
                             <Button
-                              color="primary"
+                              color="aqua"
                               block
                               onClick={() => this.notify("tr")}
                             >
@@ -246,7 +246,7 @@ class Notifications extends React.Component {
                         <Row>
                           <Col md={4} xs={12}>
                             <Button
-                              color="primary"
+                              color="aqua"
                               block
                               onClick={() => this.notify("bl")}
                             >
@@ -255,7 +255,7 @@ class Notifications extends React.Component {
                           </Col>
                           <Col md={4} xs={12}>
                             <Button
-                              color="primary"
+                              color="aqua"
                               block
                               onClick={() => this.notify("bc")}
                             >
@@ -264,7 +264,7 @@ class Notifications extends React.Component {
                           </Col>
                           <Col md={4} xs={12}>
                             <Button
-                              color="primary"
+                              color="aqua"
                               block
                               onClick={() => this.notify("br")}
                             >

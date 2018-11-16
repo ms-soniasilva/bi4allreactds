@@ -12,10 +12,9 @@ import {
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
-import dashboardRoutes from "../../routes/newDashboard.jsx";
-import newRoutes from "routes/newDashboard.jsx";
+import sidebarRoute from "routes/sidebar.jsx";
 
-import logo from "logo-white.svg";
+import logo from "logo.svg";
 
 var ps;
 
@@ -26,7 +25,7 @@ class Sidebar extends React.Component {
 
     this.state = {
       open: false,
-      items: newRoutes
+      items: sidebarRoute
     };
   }
   // verifies if routeName is the one active (in browser input)
@@ -48,7 +47,7 @@ class Sidebar extends React.Component {
   }
   render() {
     return (
-      <div className="sidebar" data-color="primary">
+      <div className="sidebar" data-color="white">
         <div className="logo">
           <a href="#" className="simple-text logo-mini">
             <div className="logo-img">
@@ -58,16 +57,20 @@ class Sidebar extends React.Component {
           <a href="#" className="simple-text logo-normal">
             Lab
           </a>
-          <form>
-            <InputGroup className="no-border">
-              <Input placeholder="Search..." />
-              <InputGroupAddon addonType="append">
-                <InputGroupText>
-                  <i className="now-ui-icons ui-1_zoom-bold" />
-                </InputGroupText>
-              </InputGroupAddon>
-            </InputGroup>
-          </form>
+          <div class="menu-search">
+            {" "}
+            <p>Search</p>
+            <form>
+              <InputGroup>
+                <Input placeholder="Search..." />
+                <InputGroupAddon addonType="append">
+                  <InputGroupText>
+                    <i className="now-ui-icons ui-1_zoom-bold" />
+                  </InputGroupText>
+                </InputGroupAddon>
+              </InputGroup>
+            </form>
+          </div>
         </div>
         <div className="sidebar-wrapper" ref="sidebar">
           {this.props.routes.map((parent, key) => {
@@ -77,7 +80,6 @@ class Sidebar extends React.Component {
                   <a
                     onClick={() => {
                       parent.isOpen = !parent.isOpen;
-                      console.log(parent.isOpen);
                       this.forceUpdate();
                     }}
                     key={key}

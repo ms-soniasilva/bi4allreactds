@@ -5,10 +5,9 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import { Header, Footer, Sidebar } from "components";
 
-import dashboardRoutes from "routes/dashboard.jsx";
-import newRoutes from "routes/newDashboard.jsx";
+import sidebarRoute from "routes/sidebar.jsx";
 
-console.log("New Routes ", newRoutes[0].items);
+console.log("New Routes ", sidebarRoute[0].items);
 
 var ps;
 
@@ -34,11 +33,11 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <Sidebar {...this.props} routes={newRoutes} />
+        <Sidebar {...this.props} routes={sidebarRoute} />
 
         <div className="main-panel" ref="mainPanel">
           <Header {...this.props} />
-          {newRoutes.map((parent, key) => {
+          {sidebarRoute.map((parent, key) => {
             return parent.items.map((prop, key) => {
               if (prop.collapse) {
                 return prop.views.map((prop2, key2) => {

@@ -2,7 +2,7 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$sans-serif-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+$sans-serif-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
 
 $none: 0 !default;
 $border-thin: 1px !default;
@@ -12,33 +12,58 @@ $white-color: #ffffff !default;
 $white-bg: #ffffff !default;
 
 $smoke-bg: #f5f5f5 !default;
-$light-black: #444 !default;
 
-$black-bg: rgba(30, 30, 30, 0.97) !default;
+/*aqua*/
+$aqua: #2dccd3 !default;
+$aqua-lighten-10: lighten($aqua, 10%) !default;
+$aqua-lighten-20: lighten($aqua, 20%) !default;
+$aqua-lighten-30: lighten($aqua, 30%) !default;
+$aqua-lighten-40: lighten($aqua, 40%) !default;
 
-$black-color: #333333 !default;
-$black-hr: #444444 !default;
+$aqua-darken-10: darken($aqua, 10%) !default;
+$aqua-darken-20: darken($aqua, 20%) !default;
+$aqua-darken-30: darken($aqua, 30%) !default;
+$aqua-darken-40: darken($aqua, 40%) !default;
 
+$aqua-opacity-2: rgba(45, 204, 211, 0.2) !default;
+$aqua-opacity-4: rgba(45, 204, 211, 0.4) !default;
+$aqua-opacity-6: rgba(45, 204, 211, 0.6) !default;
+$aqua-opacity-8: rgba(45, 204, 211, 0.8) !default;
+/*end aqua*/
+
+/*gray*/
+
+$gray: #666666 !default;
+$gray-lighten-10: lighten($gray, 10%) !default;
+$gray-lighten-20: lighten($gray, 20%) !default;
+$gray-lighten-30: lighten($gray, 30%) !default;
+$gray-lighten-40: lighten($gray, 40%) !default;
+
+$gray-darken-10: darken($gray, 10%) !default;
+$gray-darken-20: darken($gray, 20%) !default;
+$gray-darken-30: darken($gray, 30%) !default;
+$gray-darken-40: darken($gray, 40%) !default;
+
+$gray-opacity-2: rgba(51, 51, 51, 0.2) !default;
+$gray-opacity-4: rgba(51, 51, 51, 0.4) !default;
+$gray-opacity-6: rgba(51, 51, 51, 0.6) !default;
+$gray-opacity-8: rgba(51, 51, 51, 0.8) !default;
+
+$gray-bg: rgba(30, 30, 30, 0.97) !default;
+$gray-hr: #444444 !default;
 $hr-line: rgba(0, 0, 0, 0.1) !default;
+/*end gray*/
 
-$light-gray: #e3e3e3 !default;
-$medium-gray: #dddddd !default;
-$dark-gray: #9a9a9a !default;
-
-$opacity-gray-3: rgba(222, 222, 222, 0.3) !default;
-$opacity-gray-5: rgba(222, 222, 222, 0.5) !default;
-$opacity-gray-8: rgba(222, 222, 222, 0.8) !default;
-
-$opacity-5: rgba(255, 255, 255, 0.5) !default;
-$opacity-8: rgba(255, 255, 255, 0.8) !default;
+/*Sidebar Opacity (by $gray-lighten-20)*/
+$opacity-gray-1: rgba(153, 153, 153, 0.1) !default;
+$opacity-gray-2: rgba(153, 153, 153, 0.2) !default;
+$opacity-gray-3: rgba(153, 153, 153, 0.3) !default;
+$opacity-gray-6: rgba(153, 153, 153, 0.6) !default;
+$opacity-gray-8: rgba(153, 153, 153, 0.8) !default;
+/*End Sidebar Opacity*/
 
 $datepicker-color-days: rgba(255, 255, 255, 0.8) !default;
 $datepicker-color-old-new-days: rgba(255, 255, 255, 0.4) !default;
-
-$opacity-1: rgba(255, 255, 255, 0.1) !default;
-$opacity-2: rgba(255, 255, 255, 0.2) !default;
-$opacity-3: rgba(255, 255, 255, 0.3) !default;
-$opacity-4: rgba(255, 255, 255, 0.4) !default;
 
 $transparent-bg: transparent !default;
 $dark-background: #555555 !default;
@@ -47,11 +72,17 @@ $default-color: #888 !default;
 $default-states-color: lighten($default-color, 6%) !default;
 $default-color-opacity: rgba(182, 182, 182, 0.6) !default;
 
-$primary-color: #2dccd3 !default;
-$primary-states-color: lighten($primary-color, 6%) !default;
-$primary-darken-color: darken($primary-color, 15%) !default;
-$primary-color-opacity: rgba(45, 204, 211, 0.3) !default;
-$primary-color-alert: rgba(45, 204, 211, 0.8) !default;
+/*white*/
+$white-color-opacity-1: rgba(255, 255, 255, 0.1) !default;
+$white-color-opacity-2: rgba(255, 255, 255, 0.2) !default;
+$white-color-opacity-3: rgba(255, 255, 255, 0.3) !default;
+$white-color-opacity-4: rgba(255, 255, 255, 0.4) !default;
+$white-color-opacity-5: rgba(255, 255, 255, 0.5) !default;
+$white-color-opacity-6: rgba(255, 255, 255, 0.6) !default;
+$white-color-opacity-7: rgba(255, 255, 255, 0.7) !default;
+$white-color-opacity-8: rgba(255, 255, 255, 0.8) !default;
+$white-color-opacity-9: rgba(255, 255, 255, 0.8) !default;
+/*end white*/
 
 $secondary-color: #8173b0 !default;
 $secondary-states-color: lighten($secondary-color, 6%) !default;
@@ -64,7 +95,7 @@ $success-states-color: lighten($success-color, 6%) !default;
 $success-color-opacity: rgba(47, 209, 147, 0.3) !default;
 $success-color-alert: rgba(47, 209, 147, 0.8) !default;
 
-$info-color: #0f8481 !default;
+$info-color: $gray-lighten-30;
 $info-states-color: lighten($info-color, 6%) !default;
 $info-color-opacity: rgba(15, 132, 129, 0.3) !default;
 $info-color-alert: rgba(15, 132, 129, 0.8) !default;
@@ -82,17 +113,17 @@ $danger-color-alert: rgba(206, 48, 78, 0.8) !default;
 $orange-color: #f96332 !default;
 
 /*       Brand Colors         */
-$brand-primary: $primary-color !default;
+$brand-aqua: $aqua !default;
 $brand-info: $info-color !default;
 $brand-success: $success-color !default;
 $brand-warning: $warning-color !default;
 $brand-danger: $danger-color !default;
-$brand-inverse: $black-color !default;
+$brand-inverse: $gray !default;
 
 $link-disabled-color: #666666 !default;
 
 /*      Light Colors         */
-$light-blue: rgba($primary-color, 0.2);
+$light-blue: rgba($aqua, 0.2);
 $light-azure: rgba($info-color, 0.2);
 $light-green: rgba($success-color, 0.2);
 $light-orange: rgba($warning-color, 0.2);
@@ -104,39 +135,27 @@ $light-red: rgba($danger-color, 0.2);
   background: -webkit-linear-gradient(
     120deg,
     $white-color 40px,
-    $primary-color 50%,
+    $aqua 50%,
     $secondary-color 90%
   );
   background: -o-linear-gradient(
     120deg,
     $white-color 40px,
-    $primary-color 50%,
+    $aqua 50%,
     $secondary-color 90%
   );
   background: linear-gradient(
     120deg,
     $white-color 40px,
-    $primary-color 50%,
+    $aqua 50%,
     $secondary-color 90%
   );
 }
 
 @mixin two-colors-gradient {
-  background: -webkit-linear-gradient(
-    120deg,
-    $primary-color 40px,
-    $secondary-color 90%
-  );
-  background: -o-linear-gradient(
-    120deg,
-    $primary-color 40px,
-    $secondary-color 90%
-  );
-  background: linear-gradient(
-    120deg,
-    $primary-color 40px,
-    $secondary-color 90%
-  );
+  background: -webkit-linear-gradient(120deg, $aqua 40px, $secondary-color 90%);
+  background: -o-linear-gradient(120deg, $aqua 40px, $secondary-color 90%);
+  background: linear-gradient(120deg, $aqua 40px, $secondary-color 90%);
 }
 //== Components
 //
@@ -182,7 +201,7 @@ $border-radius-extreme: 0.875rem !default;
 $border-radius-large-top: $border-radius-large $border-radius-large 0 0 !default;
 $border-radius-large-bottom: 0 0 $border-radius-large $border-radius-large !default;
 
-$btn-round-radius: 30px !default;
+$btn-round-radius: 12px !default;
 
 $height-base: 55px !default;
 
@@ -207,7 +226,8 @@ $font-size-mini: 0.7142em !default;
 $font-size-small: 0.8571em !default;
 $font-size-base: 14px !default;
 $font-size-large: 1em !default;
-$font-size-large-navbar: 20px !default;
+$font-size-large-navbar: 14px !default;
+$font-size-small-navbar: 1.1em !default;
 $font-size-blockquote: 1.1em !default; // ~ 15px
 
 $font-weight-light: 300 !default;
@@ -271,7 +291,7 @@ $height-icon-message-sm: 20px;
 $width-icon-message-sm: 20px;
 
 $white-navbar: rgba(#ffffff, 0.96);
-$primary-navbar: rgba(#2dccd3, 0.98);
+$aqua-navbar: rgba(#2dccd3, 0.98);
 $info-navbar: rgba(#5bcaff, 0.98);
 $success-navbar: rgba(#4cd964, 0.98);
 $warning-navbar: rgba(#ff9500, 0.98);

@@ -39,7 +39,7 @@
 
   // btn-neutral style
   @if $btn-color == $white-color {
-    color: $primary-color;
+    color: $aqua;
 
     &.btn-danger {
       color: $danger-color;
@@ -106,13 +106,13 @@
     .show > &.dropdown-toggle:focus,
     .show > &.dropdown-toggle:hover {
       background-color: $white-color;
-      color: $primary-states-color;
+      color: $aqua-lighten-10;
       box-shadow: none;
     }
 
     &:hover,
     &:focus {
-      color: $primary-states-color;
+      color: $aqua-lighten-10;
 
       &:not(.nav-link) {
         box-shadow: none;
